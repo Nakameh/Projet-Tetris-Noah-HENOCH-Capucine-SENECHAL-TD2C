@@ -9,7 +9,7 @@ Plateau * initPlateau(unsigned char nbLigne, unsigned char nbColonne) {
     }
     p->nbColonne = nbColonne;
     p->nbLigne = nbLigne;
-    p->tab = (Case **) malloc(sizeof(Case) * nbColonne * nbLigne);
+    p->tab = (Case **) malloc(sizeof(Case*) * nbColonne * nbLigne);
     for (int i = 0; i < nbLigne * nbColonne; i++) {
             p->tab[i] = initCase();
     }
