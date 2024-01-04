@@ -1,4 +1,6 @@
 #pragma once
+typedef struct _plateau Plateau;
+
 #include "plateau.h"
 
 typedef struct _piece

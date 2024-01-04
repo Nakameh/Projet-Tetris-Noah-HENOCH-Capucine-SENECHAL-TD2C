@@ -1,6 +1,8 @@
 #include "piece.h"
 #include <time.h>
 
+
+
 Piece * initPiece(Plateau * p) {
     srand(time(NULL));
     Piece * piece = (Piece *) malloc(sizeof(Piece));

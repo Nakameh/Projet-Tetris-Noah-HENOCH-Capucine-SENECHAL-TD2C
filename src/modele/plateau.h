@@ -1,5 +1,6 @@
 #pragma once
 #include "case.h"
+#include "piece.h"
 
 typedef struct _plateau
 {
@@ -8,7 +9,6 @@ typedef struct _plateau
     Case ** tab;
 } Plateau;
 
-#include "piece.h"
 
 
 Plateau * initPlateau(unsigned char nbLigne, unsigned char nbColonne);
