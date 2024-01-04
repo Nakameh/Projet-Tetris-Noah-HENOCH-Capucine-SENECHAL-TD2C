@@ -38,4 +38,4 @@ Piece * initPiece6(Plateau * p);
 Piece * initPiece7(Plateau * p);
 
 
-void destroyPiece(Piece * p);
+void deletePiece(Piece * p);

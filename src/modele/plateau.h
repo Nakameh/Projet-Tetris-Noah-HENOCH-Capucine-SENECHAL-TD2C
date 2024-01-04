@@ -1,5 +1,6 @@
 #pragma once
 #include "case.h"
+typedef struct _piece Piece;
 #include "piece.h"
 
 typedef struct _plateau
@@ -17,4 +18,4 @@ void deletePlateau(Plateau * p);
 
 Plateau * copyPlateau(Plateau * src) ;
 
-//Faire la fonction qui renvoie un nouveau tableau avec une pièce dedans
+Plateau * plateauWithPiece(Plateau * plat, Piece * piece);

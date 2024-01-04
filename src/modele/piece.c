@@ -23,14 +23,18 @@ Piece * initPiece1(Plateau * p) {
     piece->xCoordsCentre = 0;
     piece->yCoordsCentre = 0;  
     piece->cases = (Case **) malloc(sizeof(Case *) * piece->hauteur * piece->largeur);
-    piece->x = p->nbColonne/2;
-    piece->y = 1;
+    piece->x = 1;
+    piece->y = p->nbColonne/2;;
 
     piece->cases[0] = initCase();
     piece->cases[1] = initCase();
     piece->cases[2] = initCase();
     piece->cases[3] = initCase();
-    for (int i = 0; i < piece->hauteur * piece->largeur; i++) if (piece->cases[i]) setColorCase(piece->cases[i], piece->color);
+    for (int i = 0; i < piece->hauteur * piece->largeur; i++) 
+        if (piece->cases[i]) {
+            setColorCase(piece->cases[i], piece->color);
+            setOccupeCase(piece->cases[i]);
+        }
 
     return piece;
 }
@@ -43,14 +47,18 @@ Piece * initPiece2(Plateau * p) {
     piece->xCoordsCentre = 0;
     piece->yCoordsCentre = 1;  
     piece->cases = (Case **) malloc(sizeof(Case *) * piece->hauteur * piece->largeur);
-    piece->x = p->nbColonne/2;
-    piece->y = 2;
+    piece->x = 2;
+    piece->y = p->nbColonne/2;;
 
     piece->cases[0] = initCase();
     piece->cases[1] = initCase();
     piece->cases[2] = initCase();
     piece->cases[3] = initCase();
-    for (int i = 0; i < piece->hauteur * piece->largeur; i++) if (piece->cases[i]) setColorCase(piece->cases[i], piece->color);
+    for (int i = 0; i < piece->hauteur * piece->largeur; i++) 
+        if (piece->cases[i]) {
+            setColorCase(piece->cases[i], piece->color);
+            setOccupeCase(piece->cases[i]);
+        }
 
     return piece;
 }
@@ -63,8 +71,8 @@ Piece * initPiece3(Plateau * p) {
     piece->xCoordsCentre = 1;
     piece->yCoordsCentre = 1;  
     piece->cases = (Case **) malloc(sizeof(Case *) * piece->hauteur * piece->largeur);
-    piece->x = p->nbColonne/2;
-    piece->y = 2;
+    piece->x = 2;
+    piece->y = p->nbColonne/2;;
 
     piece->cases[0] = NULL;
     piece->cases[1] = initCase();
@@ -72,7 +80,11 @@ Piece * initPiece3(Plateau * p) {
     piece->cases[3] = initCase();
     piece->cases[4] = initCase();
     piece->cases[5] = NULL;
-    for (int i = 0; i < piece->hauteur * piece->largeur; i++) if (piece->cases[i]) setColorCase(piece->cases[i], piece->color);
+    for (int i = 0; i < piece->hauteur * piece->largeur; i++) 
+        if (piece->cases[i]) {
+            setColorCase(piece->cases[i], piece->color);
+            setOccupeCase(piece->cases[i]);
+        }
 
     return piece;
 }
@@ -85,8 +97,8 @@ Piece * initPiece4(Plateau * p) {
     piece->xCoordsCentre = 1;
     piece->yCoordsCentre = 1;  
     piece->cases = (Case **) malloc(sizeof(Case *) * piece->hauteur * piece->largeur);
-    piece->x = p->nbColonne/2;
-    piece->y = 2;
+    piece->x = 2;
+    piece->y = p->nbColonne/2;;
 
     piece->cases[0] = initCase();
     piece->cases[1] = initCase();
@@ -94,7 +106,11 @@ Piece * initPiece4(Plateau * p) {
     piece->cases[3] = NULL;
     piece->cases[4] = initCase();
     piece->cases[5] = initCase();
-    for (int i = 0; i < piece->hauteur * piece->largeur; i++) if (piece->cases[i]) setColorCase(piece->cases[i], piece->color);
+    for (int i = 0; i < piece->hauteur * piece->largeur; i++) 
+        if (piece->cases[i]) {
+            setColorCase(piece->cases[i], piece->color);
+            setOccupeCase(piece->cases[i]);
+        }
 
     return piece;
 }
@@ -108,8 +124,8 @@ Piece * initPiece5(Plateau * p) {
     piece->xCoordsCentre = 0;
     piece->yCoordsCentre = 1;  
     piece->cases = (Case **) malloc(sizeof(Case *) * piece->hauteur * piece->largeur);
-    piece->x = p->nbColonne/2;
-    piece->y = 2;
+    piece->x = 2;
+    piece->y = p->nbColonne/2;;
 
     piece->cases[0] = initCase();
     piece->cases[1] = NULL;
@@ -117,7 +133,11 @@ Piece * initPiece5(Plateau * p) {
     piece->cases[3] = NULL;
     piece->cases[4] = initCase();
     piece->cases[5] = initCase();
-    for (int i = 0; i < piece->hauteur * piece->largeur; i++) if (piece->cases[i]) setColorCase(piece->cases[i], piece->color);
+    for (int i = 0; i < piece->hauteur * piece->largeur; i++) 
+        if (piece->cases[i]) {
+            setColorCase(piece->cases[i], piece->color);
+            setOccupeCase(piece->cases[i]);
+        }
 
     return piece;
 }
@@ -131,8 +151,8 @@ Piece * initPiece6(Plateau * p) {
     piece->xCoordsCentre = 1;
     piece->yCoordsCentre = 1;  
     piece->cases = (Case **) malloc(sizeof(Case *) * piece->hauteur * piece->largeur);
-    piece->x = p->nbColonne/2;
-    piece->y = 2;
+    piece->x = 2;
+    piece->y = p->nbColonne/2;
 
     piece->cases[0] = NULL;
     piece->cases[1] = initCase();
@@ -140,7 +160,11 @@ Piece * initPiece6(Plateau * p) {
     piece->cases[3] = initCase();
     piece->cases[4] = initCase();
     piece->cases[5] = initCase();
-    for (int i = 0; i < piece->hauteur * piece->largeur; i++) if (piece->cases[i]) setColorCase(piece->cases[i], piece->color);
+    for (int i = 0; i < piece->hauteur * piece->largeur; i++) 
+        if (piece->cases[i]) {
+            setColorCase(piece->cases[i], piece->color);
+            setOccupeCase(piece->cases[i]);
+        }
 
     return piece;
 }
@@ -149,12 +173,12 @@ Piece * initPiece7(Plateau * p) {
     Piece * piece = initPiece();
     piece->canRotate = true;
     piece->hauteur = 2;
-    piece->largeur = 2;
+    piece->largeur = 3;
     piece->xCoordsCentre = 1;
     piece->yCoordsCentre = 0;  
     piece->cases = (Case **) malloc(sizeof(Case *) * piece->hauteur * piece->largeur);
-    piece->x = p->nbColonne/2;
-    piece->y = 1;
+    piece->x = 1;
+    piece->y = p->nbColonne/2;;
 
     piece->cases[0] = initCase();
     piece->cases[1] = initCase();
@@ -162,14 +186,18 @@ Piece * initPiece7(Plateau * p) {
     piece->cases[3] = NULL;
     piece->cases[4] = initCase();
     piece->cases[5] = NULL;
-    for (int i = 0; i < piece->hauteur * piece->largeur; i++) if (piece->cases[i]) setColorCase(piece->cases[i], piece->color);
+    for (int i = 0; i < piece->hauteur * piece->largeur; i++) 
+        if (piece->cases[i]) {
+            setColorCase(piece->cases[i], piece->color);
+            setOccupeCase(piece->cases[i]);
+        }
 
     return piece;
 }
 
 
 
-void destroyPiece(Piece * p) {
+void deletePiece(Piece * p) {
     free(p->cases);
     free(p);
 }

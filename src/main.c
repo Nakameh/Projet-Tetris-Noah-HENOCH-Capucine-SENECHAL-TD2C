@@ -15,14 +15,22 @@ int main(int argc, char const *argv[]){
     }
     Plateau * p = initPlateau(20,10);
 
+    Piece * piece = initPiece1(p);
+
+    Plateau * res = copyPlateau(p);
+
     printf("Affichage du tableau :\n");
-    for (int i = 0; i < p->nbLigne; i++) {
+    for (int i = 0; i < res->nbLigne; i++) {
         printf("|");
-        for (int j = 0; j < p->nbColonne; j++) {
-            if (p->tab[i * p->nbColonne + j]->occupe) printf("%c%c", p->tab[i * p->nbColonne + j]->color, p->tab[i * p->nbColonne + j]->color);
+        for (int j = 0; j < res->nbColonne; j++) {
+            if (res->tab[i * res->nbColonne + j]->occupe) printf("%d%d", res->tab[i * res->nbColonne + j]->color, res->tab[i * res->nbColonne + j]->color);
             else printf("  ");
         }
         printf("|\n");
     }
+
+    deletePlateau(p);
+    //deletePlateau(res);
+    //deletePiece(piece);
     return 0;
 }

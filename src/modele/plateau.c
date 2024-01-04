@@ -36,3 +36,19 @@ Plateau * copyPlateau(Plateau * src) {
     }
     return p;
 }
+
+
+Plateau * plateauWithPiece(Plateau * plat, Piece * piece) {
+    Plateau * res = copyPlateau(plat);
+    for (int i = 0; i < piece->hauteur; i++) {
+        for (int j = 0; j < piece->largeur; j++) {
+            if (piece->cases[i * piece->largeur + j]) {
+                Case * c = res->tab[res->nbColonne * (piece->x + (j - piece->xCoordsCentre)) + (piece->y + (i - piece->yCoordsCentre))];
+                setColorCase(c, piece->color);
+                setOccupeCase(c);
+            }
+        }
+    }
+
+    return res;
+}
