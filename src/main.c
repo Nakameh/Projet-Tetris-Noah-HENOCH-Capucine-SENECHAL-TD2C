@@ -2,6 +2,9 @@
 #include <string.h>
 #include "modele/plateau.h"
 
+//COULEURS : 0 = VIDE; 1 = JAUNE; 2 = BLEU; 3 = ROUGE; 4 = VERST 5 = ORANGE; 6 = ROSE; 7 = VIOLET
+
+
 int main(int argc, char const *argv[]){
     if (argc == 1) {
         printf("Affichage ncurses\n");
@@ -11,7 +14,7 @@ int main(int argc, char const *argv[]){
         printf("[ERREUR] Nombre de paramètres invalides/Paramètre invalide !\n./tetris [-no-gui]\n");
     }
     Plateau * p = initPlateau(20,10);
-    
+
     printf("Affichage du tableau :\n");
     for (int i = 0; i < p->nbLigne; i++) {
         printf("|");
