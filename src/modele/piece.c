@@ -15,6 +15,7 @@ Piece * initPiece() {
     return piece;
 }
 
+
 Piece * initPiece1(Plateau * p) {
     Piece * piece = initPiece();
     piece->canRotate = false;
@@ -23,9 +24,8 @@ Piece * initPiece1(Plateau * p) {
     piece->xCoordsCentre = 0;
     piece->yCoordsCentre = 0;  
     piece->cases = (Case **) malloc(sizeof(Case *) * piece->hauteur * piece->largeur);
-    piece->x = 1;
-    piece->y = p->nbColonne/2;;
-
+    piece->x = p->nbColonne/2;
+    piece->y = 0;
     piece->cases[0] = initCase();
     piece->cases[1] = initCase();
     piece->cases[2] = initCase();
@@ -47,8 +47,8 @@ Piece * initPiece2(Plateau * p) {
     piece->xCoordsCentre = 0;
     piece->yCoordsCentre = 1;  
     piece->cases = (Case **) malloc(sizeof(Case *) * piece->hauteur * piece->largeur);
-    piece->x = 2;
-    piece->y = p->nbColonne/2;;
+    piece->x = p->nbColonne/2;
+    piece->y = 1;
 
     piece->cases[0] = initCase();
     piece->cases[1] = initCase();
@@ -71,8 +71,8 @@ Piece * initPiece3(Plateau * p) {
     piece->xCoordsCentre = 1;
     piece->yCoordsCentre = 1;  
     piece->cases = (Case **) malloc(sizeof(Case *) * piece->hauteur * piece->largeur);
-    piece->x = 2;
-    piece->y = p->nbColonne/2;;
+    piece->x = p->nbColonne/2;
+    piece->y = 1;
 
     piece->cases[0] = NULL;
     piece->cases[1] = initCase();
@@ -97,8 +97,8 @@ Piece * initPiece4(Plateau * p) {
     piece->xCoordsCentre = 1;
     piece->yCoordsCentre = 1;  
     piece->cases = (Case **) malloc(sizeof(Case *) * piece->hauteur * piece->largeur);
-    piece->x = 2;
-    piece->y = p->nbColonne/2;;
+    piece->x = p->nbColonne/2;
+    piece->y = 1;
 
     piece->cases[0] = initCase();
     piece->cases[1] = initCase();
@@ -124,8 +124,8 @@ Piece * initPiece5(Plateau * p) {
     piece->xCoordsCentre = 0;
     piece->yCoordsCentre = 1;  
     piece->cases = (Case **) malloc(sizeof(Case *) * piece->hauteur * piece->largeur);
-    piece->x = 2;
-    piece->y = p->nbColonne/2;;
+    piece->x = p->nbColonne/2;
+    piece->y = 1;
 
     piece->cases[0] = initCase();
     piece->cases[1] = NULL;
@@ -151,8 +151,8 @@ Piece * initPiece6(Plateau * p) {
     piece->xCoordsCentre = 1;
     piece->yCoordsCentre = 1;  
     piece->cases = (Case **) malloc(sizeof(Case *) * piece->hauteur * piece->largeur);
-    piece->x = 2;
-    piece->y = p->nbColonne/2;
+    piece->x = p->nbColonne/2;
+    piece->y = 1;
 
     piece->cases[0] = NULL;
     piece->cases[1] = initCase();
@@ -177,8 +177,8 @@ Piece * initPiece7(Plateau * p) {
     piece->xCoordsCentre = 1;
     piece->yCoordsCentre = 0;  
     piece->cases = (Case **) malloc(sizeof(Case *) * piece->hauteur * piece->largeur);
-    piece->x = 1;
-    piece->y = p->nbColonne/2;;
+    piece->x = p->nbColonne/2;
+    piece->y = 0;
 
     piece->cases[0] = initCase();
     piece->cases[1] = initCase();

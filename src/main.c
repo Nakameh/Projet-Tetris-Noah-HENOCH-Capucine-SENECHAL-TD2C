@@ -15,7 +15,7 @@ int main(int argc, char const *argv[]){
     }
     Plateau * p = initPlateau(20,10);
 
-    Piece * piece = initPiece2(p);
+    Piece * piece = initPiece7(p);
 
     Plateau * res = plateauWithPiece(p, piece);
 

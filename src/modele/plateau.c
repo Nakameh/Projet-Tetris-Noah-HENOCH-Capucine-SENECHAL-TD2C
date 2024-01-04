@@ -43,7 +43,7 @@ Plateau * plateauWithPiece(Plateau * plat, Piece * piece) {
     for (int i = 0; i < piece->hauteur; i++) {
         for (int j = 0; j < piece->largeur; j++) {
             if (piece->cases[i * piece->largeur + j]) {
-                Case * c = res->tab[res->nbColonne * (piece->x + (j - piece->xCoordsCentre)) + (piece->y + (i - piece->yCoordsCentre))];
+                Case * c = res->tab[res->nbColonne * (piece->y + (i - piece->yCoordsCentre)) + (piece->x + (j - piece->xCoordsCentre))];
                 setColorCase(c, piece->color);
                 setOccupeCase(c);
             }
