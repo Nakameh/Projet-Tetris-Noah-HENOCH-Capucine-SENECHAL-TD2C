@@ -202,3 +202,16 @@ void deletePiece(Piece * p) {
     free(p->cases);
     free(p);
 }
+
+
+void tombePiece(Piece *p) {
+    (p->y)++;
+}
+
+void deplacementGauchePiece(Piece * p){
+    p->x--;
+}
+
+void deplacementDroitePiece(Piece * p) {
+    p->x++;
+}

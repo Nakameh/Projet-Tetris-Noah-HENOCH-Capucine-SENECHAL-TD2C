@@ -19,6 +19,53 @@ int main(int argc, char const *argv[]){
 
     Plateau * res = plateauWithPiece(p, piece);
 
+    printf("Y de la pièce : %d\n", piece->y);
+    printf("Affichage du tableau :\n");
+    for (int i = 0; i < res->nbLigne; i++) {
+        printf("|");
+        for (int j = 0; j < res->nbColonne; j++) {
+            if (res->tab[i * res->nbColonne + j]->occupe) printf("%d%d", res->tab[i * res->nbColonne + j]->color, res->tab[i * res->nbColonne + j]->color);
+            else printf("  ");
+        }
+        printf("|\n");
+    }
+    printf("\n\n");
+
+    tombePiece(piece);
+    res = plateauWithPiece(p, piece);
+
+    printf("Y de la pièce : %d\n", piece->y);
+    printf("Affichage du tableau :\n");
+    for (int i = 0; i < res->nbLigne; i++) {
+        printf("|");
+        for (int j = 0; j < res->nbColonne; j++) {
+            if (res->tab[i * res->nbColonne + j]->occupe) printf("%d%d", res->tab[i * res->nbColonne + j]->color, res->tab[i * res->nbColonne + j]->color);
+            else printf("  ");
+        }
+        printf("|\n");
+    }
+
+    deplacementGauchePiece(piece);
+    tombePiece(piece);
+    res = plateauWithPiece(p, piece);
+
+    printf("Y de la pièce : %d\n", piece->y);
+    printf("Affichage du tableau :\n");
+    for (int i = 0; i < res->nbLigne; i++) {
+        printf("|");
+        for (int j = 0; j < res->nbColonne; j++) {
+            if (res->tab[i * res->nbColonne + j]->occupe) printf("%d%d", res->tab[i * res->nbColonne + j]->color, res->tab[i * res->nbColonne + j]->color);
+            else printf("  ");
+        }
+        printf("|\n");
+    }
+
+    deplacementDroitePiece(piece);
+    deplacementDroitePiece(piece);
+    tombePiece(piece);
+    res = plateauWithPiece(p, piece);
+
+    printf("Y de la pièce : %d\n", piece->y);
     printf("Affichage du tableau :\n");
     for (int i = 0; i < res->nbLigne; i++) {
         printf("|");
