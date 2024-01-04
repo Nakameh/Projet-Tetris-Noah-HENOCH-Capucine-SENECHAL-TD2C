@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include "modele/case.h"
 
 int main(int argc, char const *argv[])
 {
