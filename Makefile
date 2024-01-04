@@ -12,8 +12,7 @@ TARGET ?= tetris
 all : $(TARGET)
 
 $(TARGET) : $(OBJS)
-	@mkdir -p $(DEST_DIR)
-	$(CC) -o $(DEST_DIR)/$(TARGET) $(OBJS) $(LDFLAGS)
+	$(CC) -o $(TARGET) $(OBJS) $(LDFLAGS)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(OBJ_DIR)
@@ -21,7 +20,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 
 
 try: $(TARGET)
-	./$(DEST_DIR)/$(TARGET)
+	./$(TARGET)
 
 clean :
 	rm -rf $(OBJ_DIR)
