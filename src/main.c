@@ -11,6 +11,7 @@ int main(int argc, char const *argv[]){
         printf("[ERREUR] Nombre de paramètres invalides/Paramètre invalide !\n./tetris [-no-gui]\n");
     }
     Plateau * p = initPlateau(20,10);
+    
     printf("Affichage du tableau :\n");
     for (int i = 0; i < p->nbLigne; i++) {
         printf("|");
