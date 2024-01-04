@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
+
+
 typedef struct _case {
     unsigned occupe : 1;
     unsigned char color;
@@ -22,3 +24,5 @@ char getColorCase(Case * c);
 unsigned isOccupedCase(Case *c);
 
 void deleteCase(Case * c);
+
+Case * copyCase(Case * src);

@@ -36,3 +36,14 @@ unsigned isOccupedCase(Case *c) {
 void deleteCase(Case * c) {
     free(c);
 }
+
+Case * copyCase(Case * src) {
+    Case * c = (Case *) malloc(sizeof(Case));
+    if (!c) {
+        printf("[ERREUR] Erreur d'allocution dynamique pour une Case !\n");
+        exit(7);
+    }
+    c->occupe = src->occupe;
+    c->color = src->color;
+    return c;
+}
