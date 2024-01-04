@@ -198,6 +198,7 @@ Piece * initPiece7(Plateau * p) {
 
 
 void deletePiece(Piece * p) {
+    for (int i = 0; i < p->largeur * p->hauteur; i++) if (p->cases[i]) free(p->cases[i]);
     free(p->cases);
     free(p);
 }

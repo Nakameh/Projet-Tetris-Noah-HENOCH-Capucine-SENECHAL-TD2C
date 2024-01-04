@@ -15,9 +15,9 @@ int main(int argc, char const *argv[]){
     }
     Plateau * p = initPlateau(20,10);
 
-    Piece * piece = initPiece1(p);
+    Piece * piece = initPiece2(p);
 
-    Plateau * res = copyPlateau(p);
+    Plateau * res = plateauWithPiece(p, piece);
 
     printf("Affichage du tableau :\n");
     for (int i = 0; i < res->nbLigne; i++) {
@@ -30,7 +30,7 @@ int main(int argc, char const *argv[]){
     }
 
     deletePlateau(p);
-    //deletePlateau(res);
-    //deletePiece(piece);
+    deletePlateau(res);
+    deletePiece(piece);
     return 0;
 }

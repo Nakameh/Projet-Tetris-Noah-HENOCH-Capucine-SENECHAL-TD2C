@@ -30,7 +30,7 @@ Plateau * copyPlateau(Plateau * src) {
     }
     p->nbColonne = src->nbColonne;
     p->nbLigne = src->nbLigne;
-    p->tab = (Case **) malloc(sizeof(Case) * p->nbColonne * p->nbLigne);
+    p->tab = (Case **) malloc(sizeof(Case *) * p->nbColonne * p->nbLigne);
     for (int i = 0; i < p->nbColonne * p->nbLigne; i++) {
             p->tab[i] = copyCase(src->tab[i]);
     }
