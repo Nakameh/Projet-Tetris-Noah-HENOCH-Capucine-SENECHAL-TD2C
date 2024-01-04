@@ -37,5 +37,10 @@ Piece * initPiece6(Plateau * p);
 
 Piece * initPiece7(Plateau * p);
 
-
 void deletePiece(Piece * p);
+
+void tombePiece(Piece *p);
+
+void deplacementGauchePiece(Piece * p);
+
+void deplacementDroitePiece(Piece * p);
