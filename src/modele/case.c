@@ -1,5 +1,6 @@
 #include "case.h"
 
+
 Case * initCase(){
     Case * c = (Case *) malloc(sizeof(Case));
     if (!c) {
@@ -8,6 +9,7 @@ Case * initCase(){
     }
     c->occupe = false;
     c->color = ' ';
+    return c;
 }
 
 void setOccupeCase(Case * c) {
