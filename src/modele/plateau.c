@@ -12,6 +12,7 @@ Plateau * initPlateau(unsigned char nbLigne, unsigned char nbColonne) {
     for (int i = 0; i < nbLigne * nbColonne; i++) {
             p->tab[i] = initCase();
     }
+    return p;
 }
 
 void deletePlateau(Plateau * p) {
