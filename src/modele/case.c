@@ -32,3 +32,7 @@ char getColorCase(Case * c) {
 unsigned isOccupedCase(Case *c) {
     return c->occupe == true;
 }
+
+void deleteCase(Case * c) {
+    free(c);
+}

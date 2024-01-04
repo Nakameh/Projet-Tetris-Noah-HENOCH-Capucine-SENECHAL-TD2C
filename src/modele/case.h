@@ -20,3 +20,5 @@ void setColorCase(Case * c, unsigned char color);
 char getColorCase(Case * c);
 
 unsigned isOccupedCase(Case *c);
+
+void deleteCase(Case * c);
