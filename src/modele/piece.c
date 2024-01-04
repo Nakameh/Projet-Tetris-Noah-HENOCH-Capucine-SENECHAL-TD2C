@@ -6,7 +6,7 @@ Piece * initPiece(Plateau * p) {
     Piece * piece = (Piece *) malloc(sizeof(Piece));
     if (!piece) {
         printf("[ERREUR] Erreur d'allocution dynamique d'une pièce !");
-        return 9;
+        exit(9);
     }
     piece->x = p->nbColonne/2;
     piece->y = 1;
