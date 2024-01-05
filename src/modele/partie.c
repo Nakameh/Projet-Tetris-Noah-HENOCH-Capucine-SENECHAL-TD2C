@@ -19,21 +19,10 @@ void deletePartie(Partie * p) {
     free(p);
 }
 
-char * displayPlateau(Partie * p) {
-    Plateau * plat = NULL;
-    char * res = (char *) calloc(p->plateauDeJeu->nbColonne * p->plateauDeJeu->nbLigne +1, sizeof(char));
-    if (p->piece) {
-        plat = plateauWithPiece(p->plateauDeJeu, p->piece);
-    } else {
-        plat = copyPlateau(p->plateauDeJeu);
-    }
 
-    for (int i = 0; i < plat->nbLigne; i++) {
-        for (int j = 0; j < plat->nbColonne; j++) {
-            Case * c = getCase(plat, i, j);
-            if (c->occupe) res[i * plat->nbColonne + j] = c->color;
-            else res[i * plat->nbColonne + j] = ' ';
-        }
+unsigned int finDePartie(Partie *p) {
+    for (int i = 0; i < p->plateauDeJeu->nbColonne; i++) {
+        if (getCase(p, 0, i)->occupe) return true;
     }
-    return res;
+    return false;
 }

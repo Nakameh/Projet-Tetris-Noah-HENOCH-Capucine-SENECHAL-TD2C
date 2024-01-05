@@ -14,4 +14,4 @@ Partie * initPartie(unsigned char ligne, unsigned char colonne);
 
 void deletePartie(Partie * p);
 
-char * displayPlateau(Partie * p);
+unsigned int finDePartie(Partie *p);
