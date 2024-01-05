@@ -26,6 +26,16 @@ int main(int argc, char const *argv[]){
         i++;
     }
 
+    if (nbLigne < 7) {
+        printf("[ERREUR] Nombre de lignes insuffisantes (7 minimum)\n");
+        exit (31);
+    }
+
+    if (nbColonne < 7) {
+        printf("[ERREUR] Nombre de colonnes insuffisantes (7 minimum)\n");
+        exit (11);
+    }
+
     if (!gui) {
         printf("Affichage ncurses\n");
     } else {
