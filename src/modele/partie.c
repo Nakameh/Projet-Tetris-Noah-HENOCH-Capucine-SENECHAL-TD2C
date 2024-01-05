@@ -52,5 +52,5 @@ bool deleteLignePartie(Partie * p, unsigned i) {
 void gestionLignesPartie(Partie *p) {
     int nbLigneDeleted = 0;
     for (int i = 0; i < p->plateauDeJeu->nbLigne; i++) if (deleteLignePartie(p, i)) nbLigneDeleted++;
-    
+    //A changer
 }
