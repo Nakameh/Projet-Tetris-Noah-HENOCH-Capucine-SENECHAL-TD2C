@@ -8,7 +8,7 @@ Partie * initPartie(unsigned char ligne, unsigned char colonne) {
     }
     p->niveau = 1;
     p->score = 0;
-    p->plateauDeJeu = initPlateau(20, 10);
+    p->plateauDeJeu = initPlateau(ligne, colonne);
     p->piece = NULL;
     p->scoreProchainNiveau = 1000;
     p->piece = initPiece(p->plateauDeJeu);

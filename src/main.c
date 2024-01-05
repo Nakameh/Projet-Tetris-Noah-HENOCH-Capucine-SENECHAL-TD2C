@@ -42,13 +42,8 @@ int main(int argc, char const *argv[]){
         printf("Affichage SDL\n");
     }
     
-    
-    Partie * partie = initPartie(nbLigne, nbColonne);
 
-    createWindowNcurses(partie);
-    closeWindowNcurses();
+    createWindowNcurses(nbLigne, nbColonne);
 
-
-    deletePartie(partie);
     return 0;
 }
