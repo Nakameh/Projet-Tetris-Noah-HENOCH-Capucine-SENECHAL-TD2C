@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <string.h>
-#include "modele/plateau.h"
+#include "modele/partie.h"
 
-//COULEURS : 0 = VIDE; 1 = JAUNE; 2 = BLEU; 3 = ROUGE; 4 = VERST 5 = ORANGE; 6 = ROSE; 7 = VIOLET
+//COULEURS : 32 = VIDE; 1 = JAUNE; 2 = BLEU; 3 = ROUGE; 4 = VERST 5 = ORANGE; 6 = ROSE; 7 = VIOLET
 
 
 int main(int argc, char const *argv[]){
@@ -13,71 +13,11 @@ int main(int argc, char const *argv[]){
     } else {
         printf("[ERREUR] Nombre de paramètres invalides/Paramètre invalide !\n./tetris [-no-gui]\n");
     }
-    Plateau * p = initPlateau(20,10);
-
-    Piece * piece = initPiece7(p);
-
-    Plateau * res = plateauWithPiece(p, piece);
-
-    printf("Y de la pièce : %d\n", piece->y);
-    printf("Affichage du tableau :\n");
-    for (int i = 0; i < res->nbLigne; i++) {
-        printf("|");
-        for (int j = 0; j < res->nbColonne; j++) {
-            if (res->tab[i * res->nbColonne + j]->occupe) printf("%d%d", res->tab[i * res->nbColonne + j]->color, res->tab[i * res->nbColonne + j]->color);
-            else printf("  ");
-        }
-        printf("|\n");
-    }
-    printf("\n\n");
-
-    tombePiece(piece);
-    res = plateauWithPiece(p, piece);
-
-    printf("Y de la pièce : %d\n", piece->y);
-    printf("Affichage du tableau :\n");
-    for (int i = 0; i < res->nbLigne; i++) {
-        printf("|");
-        for (int j = 0; j < res->nbColonne; j++) {
-            if (res->tab[i * res->nbColonne + j]->occupe) printf("%d%d", res->tab[i * res->nbColonne + j]->color, res->tab[i * res->nbColonne + j]->color);
-            else printf("  ");
-        }
-        printf("|\n");
-    }
-
-    deplacementGauchePiece(piece);
-    tombePiece(piece);
-    res = plateauWithPiece(p, piece);
-
-    printf("Y de la pièce : %d\n", piece->y);
-    printf("Affichage du tableau :\n");
-    for (int i = 0; i < res->nbLigne; i++) {
-        printf("|");
-        for (int j = 0; j < res->nbColonne; j++) {
-            if (res->tab[i * res->nbColonne + j]->occupe) printf("%d%d", res->tab[i * res->nbColonne + j]->color, res->tab[i * res->nbColonne + j]->color);
-            else printf("  ");
-        }
-        printf("|\n");
-    }
-
-    deplacementDroitePiece(piece);
-    deplacementDroitePiece(piece);
-    tombePiece(piece);
-    res = plateauWithPiece(p, piece);
-
-    printf("Y de la pièce : %d\n", piece->y);
-    printf("Affichage du tableau :\n");
-    for (int i = 0; i < res->nbLigne; i++) {
-        printf("|");
-        for (int j = 0; j < res->nbColonne; j++) {
-            if (res->tab[i * res->nbColonne + j]->occupe) printf("%d%d", res->tab[i * res->nbColonne + j]->color, res->tab[i * res->nbColonne + j]->color);
-            else printf("  ");
-        }
-        printf("|\n");
-    }
-
-    deletePlateau(p);
-    deletePlateau(res);
-    deletePiece(piece);
+    
+    Partie * partie = initPartie(20, 10);
+    
+    displayPlateau(partie);
+    
+    deletePartie(partie);
     return 0;
 }
