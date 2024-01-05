@@ -19,3 +19,6 @@ void deletePlateau(Plateau * p);
 Plateau * copyPlateau(Plateau * src) ;
 
 Plateau * plateauWithPiece(Plateau * plat, Piece * piece);
+
+
+Case * getCase(Plateau *p, int i, int j);

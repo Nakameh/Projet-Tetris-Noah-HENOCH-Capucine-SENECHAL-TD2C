@@ -52,3 +52,8 @@ Plateau * plateauWithPiece(Plateau * plat, Piece * piece) {
 
     return res;
 }
+
+
+Case * getCase(Plateau *p, int i, int j) {
+    return p->tab[p->nbLigne * i + j];
+}
