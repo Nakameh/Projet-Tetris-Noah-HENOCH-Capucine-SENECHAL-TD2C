@@ -14,14 +14,13 @@ int main(int argc, char const *argv[]){
     while (i < argc) {
         if (strcmp("-no-gui", argv[i]) == 0) {
             gui = false;
-        } else if (strcmp("-l", argv[i] == 0)) {
+        } else if (strcmp("-l", argv[i]) == 0) {
             nbLigne =(unsigned char) atoi(argv[i++]);
-        } else if (strcmp("-c", argv[i] == 0)) {
+        } else if (strcmp("-c", argv[i]) == 0) {
             nbColonne =(unsigned char) atoi(argv[i++]);
         } else {
             printf("[ERREUR] Paramètres invalides Utilisation :!\n./tetris [-no-gui] [-l nombreDeLignes] [-c nombreDeColonnes]\n");
         }
-
         i++;
     }
 
