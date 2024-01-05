@@ -5,7 +5,8 @@ typedef struct _plateau Plateau;
 
 typedef struct _piece
 {
-    unsigned char typePiece;
+    unsigned char idPiece;
+    unsigned char idRotation;
     unsigned canRotate : 1;
     unsigned char hauteur;
     unsigned char largeur;
