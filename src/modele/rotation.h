@@ -1,7 +1,7 @@
 #pragma once
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <stdbool.h>
 
 
 typedef struct _rotation
@@ -17,5 +17,8 @@ typedef struct _rotation
 typedef struct _rotations
 {
     unsigned char nbRotations;
-    Rotation * tabRota;
+    Rotation ** tabRota;
 }Rotations;
+
+Rotations * initRotations(int typePiece) ;
+void deleteRotations(Rotations * r);

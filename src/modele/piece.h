@@ -18,7 +18,13 @@ typedef struct _piece
     Case ** cases;  
 } Piece;
 
+
+
+
 Piece * initPiece() ;
+
+Piece * initPiece0(Plateau * p);
+
 
 Piece * initPiece1(Plateau * p);
 
@@ -31,12 +37,9 @@ Piece * initPiece3(Plateau * p);
 
 Piece * initPiece4(Plateau * p);
 
-
 Piece * initPiece5(Plateau * p);
 
 Piece * initPiece6(Plateau * p);
-
-Piece * initPiece7(Plateau * p);
 
 void deletePiece(Piece * p);
 

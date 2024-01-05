@@ -16,7 +16,7 @@ Piece * initPiece() {
 }
 
 
-Piece * initPiece1(Plateau * p) {
+Piece * initPiece0(Plateau * p) {
     Piece * piece = initPiece();
     piece->canRotate = false;
     piece->hauteur = 2;
@@ -39,7 +39,7 @@ Piece * initPiece1(Plateau * p) {
     return piece;
 }
 
-Piece * initPiece2(Plateau * p) {
+Piece * initPiece1(Plateau * p) {
     Piece * piece = initPiece();
     piece->canRotate = true;
     piece->hauteur = 4;
@@ -63,7 +63,7 @@ Piece * initPiece2(Plateau * p) {
     return piece;
 }
 
-Piece * initPiece3(Plateau * p) {
+Piece * initPiece2(Plateau * p) {
     Piece * piece = initPiece();
     piece->canRotate = true;
     piece->hauteur = 2;
@@ -89,7 +89,7 @@ Piece * initPiece3(Plateau * p) {
     return piece;
 }
 
-Piece * initPiece4(Plateau * p) {
+Piece * initPiece3(Plateau * p) {
     Piece * piece = initPiece();
     piece->canRotate = true;
     piece->hauteur = 2;
@@ -116,7 +116,7 @@ Piece * initPiece4(Plateau * p) {
 }
 
 
-Piece * initPiece5(Plateau * p) {
+Piece * initPiece4(Plateau * p) {
     Piece * piece = initPiece();
     piece->canRotate = true;
     piece->hauteur = 3;
@@ -143,7 +143,7 @@ Piece * initPiece5(Plateau * p) {
 }
 
 
-Piece * initPiece6(Plateau * p) {
+Piece * initPiece5(Plateau * p) {
     Piece * piece = initPiece();
     piece->canRotate = true;
     piece->hauteur = 3;
@@ -169,7 +169,7 @@ Piece * initPiece6(Plateau * p) {
     return piece;
 }
 
-Piece * initPiece7(Plateau * p) {
+Piece * initPiece6(Plateau * p) {
     Piece * piece = initPiece();
     piece->canRotate = true;
     piece->hauteur = 2;
