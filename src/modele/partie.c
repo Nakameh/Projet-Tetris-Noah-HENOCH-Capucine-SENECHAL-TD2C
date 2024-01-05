@@ -10,7 +10,7 @@ Partie * initPartie(unsigned char ligne, unsigned char colonne) {
     p->score = 0;
     p->plateauDeJeu = initPlateau(20, 10);
     p->piece = NULL;
-    p->scoreProchainNiveau = 10;
+    p->scoreProchainNiveau = 1000;
     return p;
 }
 
@@ -40,17 +40,33 @@ void gestionDeNiveauPartie(Partie * p) {
     }
 }
 
+void ligneTombePartie(Partie * p, unsigned i) {
+    if (i > 0) {
+        for (int j = 0; j < p->plateauDeJeu->nbColonne; j++) {
+            Case * c1 = getCase(p, i, j);
+            Case * c2 = getCase(p, i - 1, j);
+            c1->color = c2->color;
+            c1->occupe = c2->occupe;
+            c2->color = ' ';
+            c2->occupe = false;
+        }
+        ligneTombePartie(p, i-1);
+    }
+}
+
 bool deleteLignePartie(Partie * p, unsigned i) {
     for (int j = 0; j < p->plateauDeJeu->nbColonne; j++) if (!getCase(p->plateauDeJeu, i, j)->occupe) return false;
     for (int j = 0; j < p->plateauDeJeu->nbColonne; j++) {
         getCase(p->plateauDeJeu, i, j)->occupe = false;
         getCase(p->plateauDeJeu, i, j)->color = ' ';
     }
+    ligneTombePartie(p, i);
     return true;
 }
 
 void gestionLignesPartie(Partie *p) {
-    int nbLigneDeleted = 0;
+    long unsigned nbLigneDeleted = 0;
     for (int i = 0; i < p->plateauDeJeu->nbLigne; i++) if (deleteLignePartie(p, i)) nbLigneDeleted++;
-    
+    nbLigneDeleted *= 1.75;
+    addScorePartie(p, nbLigneDeleted * 100);
 }

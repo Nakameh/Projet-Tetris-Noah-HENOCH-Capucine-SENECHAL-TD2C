@@ -23,3 +23,5 @@ void gestionDeNiveauPartie(Partie * p);
 bool deleteLignePartie(Partie * p, unsigned i);
 
 void gestionLignesPartie(Partie *p);
+
+void ligneTombePartie(Partie * p, unsigned i);
