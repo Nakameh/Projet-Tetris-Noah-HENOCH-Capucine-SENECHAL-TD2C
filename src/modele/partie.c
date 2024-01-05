@@ -11,6 +11,7 @@ Partie * initPartie(unsigned char ligne, unsigned char colonne) {
     p->plateauDeJeu = initPlateau(20, 10);
     p->piece = NULL;
     p->scoreProchainNiveau = 1000;
+    addPiecePartie(p);
     return p;
 }
 
@@ -69,4 +70,9 @@ void gestionLignesPartie(Partie *p) {
     for (int i = 0; i < p->plateauDeJeu->nbLigne; i++) if (deleteLignePartie(p, i)) nbLigneDeleted++;
     nbLigneDeleted *= 1.75;
     addScorePartie(p, nbLigneDeleted * 100);
+}
+
+void addPiecePartie(Partie *p) {
+    if (p->piece) deletePiece(p->piece);
+    p->piece = initPiece(p->plateauDeJeu);
 }

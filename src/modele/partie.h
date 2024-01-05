@@ -25,3 +25,5 @@ bool deleteLignePartie(Partie * p, unsigned i);
 void gestionLignesPartie(Partie *p);
 
 void ligneTombePartie(Partie * p, unsigned i);
+
+void addPiecePartie(Partie *p) ;

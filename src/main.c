@@ -29,7 +29,6 @@ int main(int argc, char const *argv[]){
     } else {
         printf("Affichage SDL\n");
     }
-        printf("[ERREUR] Nombre de paramètres invalides/Paramètre invalide !\n./tetris [-no-gui]\n");
     
     
     Partie * partie = initPartie(nbLigne, nbColonne);
