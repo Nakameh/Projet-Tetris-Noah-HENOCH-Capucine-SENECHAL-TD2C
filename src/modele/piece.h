@@ -31,3 +31,9 @@ void tombePiece(Piece *p);
 void deplacementGauchePiece(Piece * p);
 
 void deplacementDroitePiece(Piece * p);
+
+void rotationPiece(Piece * p);
+
+Piece * copyPiece(Piece * p);
+
+Piece * initNewPiece(Plateau * p, unsigned char idp) ;

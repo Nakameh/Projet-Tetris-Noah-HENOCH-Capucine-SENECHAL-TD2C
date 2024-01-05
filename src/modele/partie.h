@@ -27,3 +27,5 @@ void gestionLignesPartie(Partie *p);
 void ligneTombePartie(Partie * p, unsigned i);
 
 void addPiecePartie(Partie *p) ;
+
+void prochaineEtape(Partie * p);

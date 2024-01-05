@@ -57,3 +57,125 @@ Plateau * plateauWithPiece(Plateau * plat, Piece * piece) {
 Case * getCase(Plateau *p, int i, int j) {
     return p->tab[p->nbColonne * i + j];
 }
+
+bool peutRotatePlateau(Plateau *pl, Piece * pi) {
+    if (!pi->canRotate) return false;
+    Piece * newPiece = copyPiece(pi);
+    rotationPiece(newPiece);
+    for (int i = 0; i < newPiece->hauteur; i++) {
+        for (int j = 0; j < newPiece->largeur; j++) {
+            if (newPiece->cases[i * newPiece->largeur + j]) {
+                unsigned char y = newPiece->y + (i - newPiece->yCoordsCentre);
+                unsigned char x = newPiece->x + (j - newPiece->xCoordsCentre);
+                if (x >= 0 && x < pl->nbColonne && y >= 0 && y < pl->nbLigne) {
+                    Case * c = getCase(pl, y, x);
+                    if (c->occupe) {
+                        deletePiece(newPiece);
+                        return false;
+                    }
+                } else {
+                    deletePiece(newPiece);
+                    return false;
+                }
+            }
+        }
+    }
+
+    deletePiece(newPiece);
+    return true;
+}
+
+bool peutBougerGauchePlateau(Plateau *pl, Piece * pi) {
+    Piece * newPiece = copyPiece(pi);
+    deplacementGauchePiece(newPiece);
+    for (int i = 0; i < newPiece->hauteur; i++) {
+        for (int j = 0; j < newPiece->largeur; j++) {
+            if (newPiece->cases[i * newPiece->largeur + j]) {
+                unsigned char y = newPiece->y + (i - newPiece->yCoordsCentre);
+                unsigned char x = newPiece->x + (j - newPiece->xCoordsCentre);
+                if (x >= 0 && x < pl->nbColonne && y >= 0 && y < pl->nbLigne) {
+                    Case * c = getCase(pl, y, x);
+                    if (c->occupe) {
+                        deletePiece(newPiece);
+                        return false;
+                    }
+                } else {
+                    deletePiece(newPiece);
+                    return false;
+                }
+            }
+        }
+    }
+
+    deletePiece(newPiece);
+    return true;
+}
+
+bool peutBougerDroitePlateau(Plateau *pl, Piece * pi) {
+    Piece * newPiece = copyPiece(pi);
+    deplacementDroitePiece(newPiece);
+    for (int i = 0; i < newPiece->hauteur; i++) {
+        for (int j = 0; j < newPiece->largeur; j++) {
+            if (newPiece->cases[i * newPiece->largeur + j]) {
+                unsigned char y = newPiece->y + (i - newPiece->yCoordsCentre);
+                unsigned char x = newPiece->x + (j - newPiece->xCoordsCentre);
+                if (x >= 0 && x < pl->nbColonne && y >= 0 && y < pl->nbLigne) {
+                    Case * c = getCase(pl, y, x);
+                    if (c->occupe) {
+                        deletePiece(newPiece);
+                        return false;
+                    }
+                } else {
+                    deletePiece(newPiece);
+                    return false;
+                }
+            }
+        }
+    }
+
+    deletePiece(newPiece);
+    return true;
+}
+
+bool peutTomberPlateau(Plateau *pl, Piece * pi) {
+    Piece * newPiece = copyPiece(pi);
+    tombePiece(newPiece);
+    for (int i = 0; i < newPiece->hauteur; i++) {
+        for (int j = 0; j < newPiece->largeur; j++) {
+            if (newPiece->cases[i * newPiece->largeur + j]) {
+                unsigned char y = newPiece->y + (i - newPiece->yCoordsCentre);
+                unsigned char x = newPiece->x + (j - newPiece->xCoordsCentre);
+                if (x >= 0 && x < pl->nbColonne && y >= 0 && y < pl->nbLigne) {
+                    Case * c = getCase(pl, y, x);
+                    if (c->occupe) {
+                        deletePiece(newPiece);
+                        return false;
+                    }
+                } else {
+                    deletePiece(newPiece);
+                    return false;
+                }
+            }
+        }
+    }
+
+    deletePiece(newPiece);
+    return true;
+}
+
+void deposePiecePlateau(Plateau *pl, Piece * pi) {
+    for (int i = 0; i < pi->hauteur; i++) {
+        for (int j = 0; j < pi->largeur; j++) {
+            if (pi->cases[i * pi->largeur + j]) {
+                unsigned char y = pi->y + (i - pi->yCoordsCentre);
+                unsigned char x = pi->x + (j - pi->xCoordsCentre);
+                if (x >= 0 && x < pl->nbColonne && y >= 0 && y < pl->nbLigne) {
+                    Case * c = getCase(pl, y, x);
+                    setOccupeCase(c);
+                    setColorCase(c, pi->color);
+                }
+            }
+        }
+    }
+}
+
