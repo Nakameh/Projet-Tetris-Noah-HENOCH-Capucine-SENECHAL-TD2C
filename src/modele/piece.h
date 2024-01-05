@@ -2,6 +2,7 @@
 typedef struct _plateau Plateau;
 
 #include "plateau.h"
+#include "rotation.h"
 
 typedef struct _piece
 {
@@ -21,25 +22,7 @@ typedef struct _piece
 
 
 
-Piece * initPiece() ;
-
-Piece * initPiece0(Plateau * p);
-
-
-Piece * initPiece1(Plateau * p);
-
-
-Piece * initPiece2(Plateau * p);
-
-
-Piece * initPiece3(Plateau * p);
-
-
-Piece * initPiece4(Plateau * p);
-
-Piece * initPiece5(Plateau * p);
-
-Piece * initPiece6(Plateau * p);
+Piece * initPiece(Plateau * p) ;
 
 void deletePiece(Piece * p);
 
