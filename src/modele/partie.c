@@ -23,7 +23,7 @@ void deletePartie(Partie * p) {
 
 unsigned int finDePartie(Partie *p) {
     for (int i = 0; i < p->plateauDeJeu->nbColonne; i++) {
-        if (getCase(p, 0, i)->occupe) return true;
+        if (getCase(p->plateauDeJeu, 0, i)->occupe) return true;
     }
     return false;
 }
@@ -43,8 +43,8 @@ void gestionDeNiveauPartie(Partie * p) {
 void ligneTombePartie(Partie * p, unsigned i) {
     if (i > 0) {
         for (int j = 0; j < p->plateauDeJeu->nbColonne; j++) {
-            Case * c1 = getCase(p, i, j);
-            Case * c2 = getCase(p, i - 1, j);
+            Case * c1 = getCase(p->plateauDeJeu, i, j);
+            Case * c2 = getCase(p->plateauDeJeu, i - 1, j);
             c1->color = c2->color;
             c1->occupe = c2->occupe;
             c2->color = ' ';

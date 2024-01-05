@@ -6,18 +6,35 @@
 
 
 int main(int argc, char const *argv[]){
-    if (argc == 1) {
-        printf("Affichage ncurses\n");
-    } else if (argc == 2 && strcmp("-no-gui", argv[1]) == 0) {
-        printf("Affichage SDL\n");
-    } else {
-        printf("[ERREUR] Nombre de paramètres invalides/Paramètre invalide !\n./tetris [-no-gui]\n");
+    unsigned char nbLigne = 20;
+    unsigned char nbColonne = 10;
+    bool gui = true;
+    
+    int i = 1;
+    while (i < argc) {
+        if (strcmp("-no-gui", argv[i]) == 0) {
+            gui = false;
+        } else if (strcmp("-l", argv[i] == 0)) {
+            nbLigne =(unsigned char) atoi(argv[i++]);
+        } else if (strcmp("-c", argv[i] == 0)) {
+            nbColonne =(unsigned char) atoi(argv[i++]);
+        } else {
+            printf("[ERREUR] Paramètres invalides Utilisation :!\n./tetris [-no-gui] [-l nombreDeLignes] [-c nombreDeColonnes]\n");
+        }
+
+        i++;
     }
+
+    if (!gui) {
+        printf("Affichage ncurses\n");
+    } else {
+        printf("Affichage SDL\n");
+    }
+        printf("[ERREUR] Nombre de paramètres invalides/Paramètre invalide !\n./tetris [-no-gui]\n");
     
-    Partie * partie = initPartie(20, 10);
     
-    displayPlateau(partie);
-    
+    Partie * partie = initPartie(nbLigne, nbColonne);
+        
     deletePartie(partie);
     return 0;
 }
