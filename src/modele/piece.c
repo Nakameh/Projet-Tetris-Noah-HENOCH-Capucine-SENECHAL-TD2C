@@ -10,7 +10,7 @@ Piece * initPiece(Plateau * p) {
         printf("[ERREUR] Erreur d'allocution dynamique d'une pièce !");
         exit(9);
     }
-    piece->idPiece = 0; //rand()%7;
+    piece->idPiece = rand()%7;
     piece->idRotation = 0;
     if (piece->idPiece == 0) piece->canRotate = false;
     else piece->canRotate = true;

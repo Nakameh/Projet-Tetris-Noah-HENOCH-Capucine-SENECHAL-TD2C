@@ -2,7 +2,7 @@
 
 void initRotation0(Rotations *res) {
     res->nbRotations = 1;
-    res->tabRota = (Rotation **) malloc(sizeof(Rotation *));
+    res->tabRota = (Rotation **) malloc(sizeof(Rotation *) * res->nbRotations);
     if (!res->tabRota) {
         printf("[ERREUR] Erreur d'allocution dynamique pour une rotation !\n");
         exit(3);
@@ -32,7 +32,7 @@ void initRotation0(Rotations *res) {
 
 void initRotation1(Rotations *res) {
     res->nbRotations = 4;
-    res->tabRota = (Rotation **) malloc(sizeof(Rotation *));
+    res->tabRota = (Rotation **) malloc(sizeof(Rotation *) * res->nbRotations);
     if (!res->tabRota) {
         printf("[ERREUR] Erreur d'allocution dynamique pour une rotation !\n");
         exit(3);
@@ -61,7 +61,7 @@ void initRotation1(Rotations *res) {
 
 void initRotation2(Rotations *res) {
     res->nbRotations = 4;
-    res->tabRota = (Rotation **) malloc(sizeof(Rotation *));
+    res->tabRota = (Rotation **) malloc(sizeof(Rotation *) * res->nbRotations);
     if (!res->tabRota) {
         printf("[ERREUR] Erreur d'allocution dynamique pour une rotation !\n");
         exit(3);
@@ -91,7 +91,7 @@ void initRotation2(Rotations *res) {
 
 void initRotation3(Rotations *res) {
     res->nbRotations = 4;
-    res->tabRota = (Rotation **) malloc(sizeof(Rotation *));
+    res->tabRota = (Rotation **) malloc(sizeof(Rotation *) * res->nbRotations);
     if (!res->tabRota) {
         printf("[ERREUR] Erreur d'allocution dynamique pour une rotation !\n");
         exit(3);
@@ -120,7 +120,7 @@ void initRotation3(Rotations *res) {
 
 void initRotation4(Rotations *res) {
     res->nbRotations = 4;
-    res->tabRota = (Rotation **) malloc(sizeof(Rotation *));
+    res->tabRota = (Rotation **) malloc(sizeof(Rotation *) * res->nbRotations);
     if (!res->tabRota) {
         printf("[ERREUR] Erreur d'allocution dynamique pour une rotation !\n");
         exit(3);
@@ -149,7 +149,7 @@ void initRotation4(Rotations *res) {
 
 void initRotation5(Rotations *res) {
     res->nbRotations = 4;
-    res->tabRota = (Rotation **) malloc(sizeof(Rotation *));
+    res->tabRota = (Rotation **) malloc(sizeof(Rotation *) * res->nbRotations);
     if (!res->tabRota) {
         printf("[ERREUR] Erreur d'allocution dynamique pour une rotation !\n");
         exit(3);
@@ -178,7 +178,7 @@ void initRotation5(Rotations *res) {
 
 void initRotation6(Rotations *res) {
     res->nbRotations = 4;
-    res->tabRota = (Rotation **) malloc(sizeof(Rotation *));
+    res->tabRota = (Rotation **) malloc(sizeof(Rotation *) * res->nbRotations);
     if (!res->tabRota) {
         printf("[ERREUR] Erreur d'allocution dynamique pour une rotation !\n");
         exit(3);

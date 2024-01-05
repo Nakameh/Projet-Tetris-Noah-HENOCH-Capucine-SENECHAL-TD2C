@@ -32,7 +32,20 @@ int main(int argc, char const *argv[]){
     
     
     Partie * partie = initPartie(nbLigne, nbColonne);
-        
+
+    Plateau * plat = plateauWithPiece(partie->plateauDeJeu, partie->piece);
+
+    for (int i = 0; i < plat->nbLigne; i++) {
+        printf("|");
+        for (int j = 0; j < plat->nbColonne; j++) {
+            Case * c = getCase(plat, i, j);
+            if (c->occupe) printf("%d%d", c->color, c->color);
+            else printf("  ");
+        }
+        printf("|\n");
+    }    
+    
+    deletePlateau(plat);
     deletePartie(partie);
     return 0;
 }
