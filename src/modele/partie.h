@@ -28,4 +28,4 @@ void ligneTombePartie(Partie * p, unsigned i);
 
 void addPiecePartie(Partie *p) ;
 
-void prochaineEtape(Partie * p);
+bool prochaineEtape(Partie * p);

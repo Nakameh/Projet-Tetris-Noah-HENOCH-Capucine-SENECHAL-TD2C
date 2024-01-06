@@ -10,7 +10,7 @@ Partie * initPartie(unsigned char ligne, unsigned char colonne) {
     p->score = 0;
     p->plateauDeJeu = initPlateau(ligne, colonne);
     p->piece = NULL;
-    p->scoreProchainNiveau = 1000;
+    p->scoreProchainNiveau = 200;
     p->piece = initPiece(p->plateauDeJeu);
     return p;
 }
@@ -37,7 +37,7 @@ void addScorePartie(Partie * p, unsigned long nb) {
 void gestionDeNiveauPartie(Partie * p) {
     while (p->score >= p->scoreProchainNiveau) {
         p->niveau++;
-        p->scoreProchainNiveau += 1000;
+        p->scoreProchainNiveau += 200;
     }
 }
 
@@ -79,13 +79,14 @@ void addPiecePartie(Partie *p) {
     
 }
 
-void prochaineEtape(Partie * p) {
+bool prochaineEtape(Partie * p) {
     if (peutTomberPlateau(p->plateauDeJeu, p->piece)) {
         tombePiece(p->piece);
     } else {
         deposePiecePlateau(p->plateauDeJeu, p->piece);
         gestionLignesPartie(p);
-        if (finDePartie(p)) exit(0);
+        if (finDePartie(p)) return false;
         addPiecePartie(p);
     }
+    return true;
 }

@@ -14,6 +14,10 @@ void createWindowNcurses(unsigned char ligne, unsigned char colonne) {
 
     scrollok(stdscr, TRUE);
 
+    keypad(stdscr, TRUE);
+
+    nodelay(stdscr, TRUE);
+
     int r, c;
     getmaxyx(stdscr, r, c);
 
@@ -66,8 +70,7 @@ void createWindowNcurses(unsigned char ligne, unsigned char colonne) {
     
     updateWindowNcurses(p);
 
-    //temporaire
-    closeWindowNcurses();
+    gestionControler(p);
 
     deletePartie(p);
 }
@@ -103,6 +106,5 @@ void updateWindowNcurses(Partie * p) {
 }
 
 void closeWindowNcurses() {
-    getch();
     endwin();
 }
