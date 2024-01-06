@@ -37,13 +37,11 @@ int main(int argc, char const *argv[]){
     }
 
     if (!gui) {
-        printf("Affichage ncurses\n");
+        createWindowNcurses(nbLigne, nbColonne);
     } else {
         printf("Affichage SDL\n");
     }
     
-
-    createWindowNcurses(nbLigne, nbColonne);
 
     return 0;
 }
