@@ -77,9 +77,9 @@ void createWindowNcurses(unsigned char ligne, unsigned char colonne) {
 
 void updateWindowNcurses(Partie * p) {
     clear();
-    mvprintw(0, 4, "Tetris !");
-    mvprintw(1, 4, "Niveau : %u", p->niveau);
-    mvprintw(2, 4, "Score : %lu", p->score);
+    mvprintw(0, 4, "Tetris !  ('q': quitter)");
+    mvprintw(1, 4, "Niveau : %u ('Flèche haut': rotation) (Flèche bas: descendre)", p->niveau);
+    mvprintw(2, 4, "Score : %lu ('Flèche gauche/droite' déplacer vers gauche/droite)", p->score);
     Plateau * plat = plateauWithPiece(p->plateauDeJeu, p->piece);
     for (int i = 0; i < plat->nbColonne * 2+2; i++) mvaddstr(4, 4 + i, "\xe2\x80\x95");
     for (int i = 0; i < plat->nbLigne; i++) {
