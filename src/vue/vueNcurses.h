@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
-#include "../controler/ncursesControler.h"
+#include "../controller/ncursesControler.h"
 
 /**
  * @brief Fonction qui permet d'initialiser une fenêtre ncurses pour jouer à Tetris
