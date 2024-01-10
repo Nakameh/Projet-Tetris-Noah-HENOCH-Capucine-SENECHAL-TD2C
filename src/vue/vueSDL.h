@@ -1,7 +1,5 @@
 #pragma once
-#include <SDL2/SDL.h>
 #include <stdbool.h>
-#include <SDL2/SDL_ttf.h>
 #include "../modele/partie.h"
 #include "../controller/sdlController.h"
 #include "./windowManager.h"

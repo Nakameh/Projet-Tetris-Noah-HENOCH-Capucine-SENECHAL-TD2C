@@ -2,7 +2,7 @@ CC := gcc
 SRC_DIR ?= src
 OBJ_DIR ?= obj
 CFLAGS ?= -Wall -MMD -g
-LDFLAGS := -lSDL2 -lncursesw
+LDFLAGS := -lSDL2 -lncursesw -lSDL2_ttf
 TARGETDIR := build
 
 

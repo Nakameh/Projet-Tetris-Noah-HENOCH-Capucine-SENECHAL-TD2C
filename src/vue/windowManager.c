@@ -14,9 +14,10 @@ windowManager *windowManager_init(char *name, int w, int h) {
     printf("[LOG] La SDL va être initialisée.\n");
     if (SDL_Init(SDL_INIT_AUDIO)) {
       fprintf(stderr, "Erreur SDL_Init : %s", SDL_GetError());
-      return NULL;
+      exit(EXIT_FAILURE);
     }
   }
+    TTF_Init();
 
   // essaie de créer un fenêtre.
   windowManager *window = (windowManager *)malloc(sizeof(windowManager));
@@ -30,7 +31,7 @@ windowManager *windowManager_init(char *name, int w, int h) {
     fprintf(stderr, "Erreur SDL_CreateWindow : %s", SDL_GetError());
     free(window);
     printf("[LOG] Nombre de fenêtre active %d\n", counter);
-    return NULL;
+    exit(EXIT_FAILURE);
   }
 
   counter++;
@@ -59,5 +60,6 @@ void windowManager_destroy(windowManager *window) {
   if (!counter) {
     printf("[LOG] La SDL a été stoppée\n");
     SDL_Quit();
+    TTF_Quit();
   }
 }  // windowManager_destroy
