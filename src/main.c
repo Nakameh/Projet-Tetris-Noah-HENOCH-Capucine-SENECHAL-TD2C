@@ -2,8 +2,11 @@
 #include <string.h>
 #include <time.h>
 #include "vue/vueNcurses.h"
+#include "vue/vueSDL.h"
 
 //COULEURS : 32 = VIDE; 1 = JAUNE; 2 = BLEU; 3 = ROUGE; 4 = VERT 5 = BLANC; 6 = MAGENTA; 7 = CYAN
+
+
 
 
 int main(int argc, char const *argv[]){
@@ -36,12 +39,16 @@ int main(int argc, char const *argv[]){
         exit (11);
     }
 
+    Partie * p = initPartie(nbLigne, nbColonne);
+
     if (!gui) {
-        createWindowNcurses(nbLigne, nbColonne);
+        createWindowNcurses(p);
     } else {
-        printf("Affichage SDL\n");
+        createWindowSDL(p);
     }
-    
+
+
+    deletePartie(p);
 
     return 0;
 }

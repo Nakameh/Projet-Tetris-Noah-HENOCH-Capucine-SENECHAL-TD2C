@@ -10,7 +10,7 @@
  * @param ligne Nombre de ligne du plateau de Tetris
  * @param colonne Nombre de colonne du plateau de Tetris
 */
-void createWindowNcurses(unsigned char ligne, unsigned char colonne);
+void createWindowNcurses(Partie * p);
 
 /**
  * @brief Fonction permettant de mettre à jour l'affichage ncurses de Tetris

@@ -7,8 +7,6 @@ typedef struct {
   SDL_Renderer *renderer;
 } windowManager;
 
-static int counter = 0;
-
 /**
  * @brief Cette fonction essaie de créer une fenêtre. Si la SDL n'est pas encore
  * initialiée alors cette fonction le fera.

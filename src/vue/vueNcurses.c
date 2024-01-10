@@ -5,7 +5,7 @@ unsigned char min(unsigned char nb1, unsigned char nb2) {
     return nb2;
 }
 
-void createWindowNcurses(unsigned char ligne, unsigned char colonne) {
+void createWindowNcurses(Partie * p) {
 
     setlocale(LC_ALL, "");
 
@@ -18,36 +18,6 @@ void createWindowNcurses(unsigned char ligne, unsigned char colonne) {
 
     nodelay(stdscr, TRUE);
 
-    int r, c;
-    getmaxyx(stdscr, r, c);
-
-    r-= 6;
-    c-=6;
-
-    
-
-    if ((unsigned char) r != ligne) {
-        ligne = min(ligne, (unsigned char) r);
-        if (ligne == (unsigned char) r) printf("[INFORMATION] Le nombre de ligne du plateau a été réduite dû aux proportions de votre terminal.\n");
-    }
-    if ((unsigned char) c != colonne) {
-        colonne = min(colonne, (unsigned char) c);
-        if (colonne == (unsigned char) c) printf("[INFORMATION] Le nombre de colonne  du plateau a été réduite dû aux proportions de votre terminal.\n");
-    }
-
-
-
-    if (ligne < 7) {
-        printf("[ERREUR] Nombre de lignes insuffisantes (7 minimum)\n");
-        exit (31);
-    }
-
-    if (colonne < 7) {
-        printf("[ERREUR] Nombre de colonnes insuffisantes (7 minimum)\n");
-        exit (11);
-    }
-
-    Partie * p = initPartie(ligne, colonne);
 
     if (has_colors() == true) {
         start_color();
@@ -71,8 +41,6 @@ void createWindowNcurses(unsigned char ligne, unsigned char colonne) {
     updateWindowNcurses(p);
 
     gestionControler(p);
-
-    deletePartie(p);
 }
 
 void updateWindowNcurses(Partie * p) {

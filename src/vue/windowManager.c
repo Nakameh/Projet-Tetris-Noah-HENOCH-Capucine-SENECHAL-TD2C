@@ -1,5 +1,8 @@
 #include "windowManager.h"
 
+static int counter = 0;
+
+
 #include <assert.h>
 
 /**
