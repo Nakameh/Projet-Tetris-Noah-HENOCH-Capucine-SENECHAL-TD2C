@@ -57,6 +57,11 @@ void gestionControler(Partie * p) {
             temps = tmp;
             break;
         
+        case 'r':
+            closeWindowNcurses();
+            createWindowSDL(p);
+            return;
+
         default:
             break;
         }

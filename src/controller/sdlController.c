@@ -66,6 +66,12 @@ void gestionController(windowManager * wm, Partie * p) {
                 quit = SDL_TRUE;
                 break;
             
+            case SDLK_r:
+                closeWindowSDL(wm);
+                quit = SDL_TRUE;
+                createWindowNcurses(p);
+                return;
+
             default:
                 break;
             }

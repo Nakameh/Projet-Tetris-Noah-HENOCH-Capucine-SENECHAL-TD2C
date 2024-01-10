@@ -3,7 +3,7 @@
 #include "../modele/partie.h"
 #include "../controller/sdlController.h"
 #include "./windowManager.h"
-
+#include "vueNcurses.h"
 
 /**
  * @brief Fonction qui permet d'initialiser une fenêtre SDL pour jouer à Tetris

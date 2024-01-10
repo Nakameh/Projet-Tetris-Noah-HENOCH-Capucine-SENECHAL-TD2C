@@ -45,7 +45,7 @@ void createWindowNcurses(Partie * p) {
 
 void updateWindowNcurses(Partie * p) {
     clear();
-    mvprintw(0, 4, "Tetris !  ('q': quitter)");
+    mvprintw(0, 4, "Tetris !  ('q': quitter) ('r': vue sdl)");
     mvprintw(1, 4, "Niveau : %u ('Flèche haut': rotation) (Flèche bas: descendre)", p->niveau);
     mvprintw(2, 4, "Score : %lu ('Flèche gauche/droite' déplacer vers gauche/droite)", p->score);
     Plateau * plat = plateauWithPiece(p->plateauDeJeu, p->piece);

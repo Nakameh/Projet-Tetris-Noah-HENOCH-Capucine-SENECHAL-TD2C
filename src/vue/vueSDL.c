@@ -64,7 +64,7 @@ void updateWindowSDL(windowManager * wm, Partie * p) {
     char text2[150];
     sprintf(text2, "Score : %lu ('Fleche gauche/droite' deplacer vers gauche/droite)", p->score);
     
-    SDL_Surface* textSurface1 = TTF_RenderText_Solid(font, "Tetris !  ('q': quitter)", textColor);
+    SDL_Surface* textSurface1 = TTF_RenderText_Solid(font, "Tetris !  ('q': quitter) ('r': Vue Ncurses)", textColor);
     SDL_Surface* textSurface2 = TTF_RenderText_Solid(font, text1, textColor);
     SDL_Surface* textSurface3 = TTF_RenderText_Solid(font, text2, textColor);
     
