@@ -46,7 +46,7 @@ windowManager *windowManager_init(char *name, int w, int h) {
  */
 void windowManager_destroy(windowManager *window) {
   assert(window && window->window && window->renderer);
-  assert(counter);
+  if (!counter) return;
 
   SDL_DestroyRenderer(window->renderer);
   SDL_DestroyWindow(window->window);
